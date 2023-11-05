@@ -15,36 +15,65 @@ Project consists of using tcpdump to capture TCP packets from websites, and anal
 
 - <b>Windows 10</b> (21H2)
 
-<h2>Program walk-through:</h2>
-
+<h2>Dump File Creation(1/3):</h2>
+<br />
 <p align="center">
 Launch the utility and create Linux Shell file: <br/>
-<img src="https://i.imgur.com/oISub0o.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/oISub0o.jpg" height="80%" width="80%" alt="Shell"/>
 <br />
 <br />
 Execute TCP script to capture 10 packets from skyroute66.com:  <br/>
-<img src="https://i.imgur.com/hHdysMY.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/hHdysMY.jpg" height="80%" width="80%" alt="10 Packets"/>
 <br />
 <br />
-After visting skyroute66: <br/>
-<img src="https://i.imgur.com/9eNOcZg.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+After visting skyroute66.com: <br/>
+<img src="https://i.imgur.com/9eNOcZg.jpg" height="80%" width="80%" alt="Skyroute66"/>
 <br />
 <br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create Dump file:  <br/>
+<img src="https://i.imgur.com/JenTeSt.jpg" height="80%" width="80%" alt="Dump file"/>
 <br />
 <br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Make the Dump file readable:  <br/>
+<img src="https://i.imgur.com/J9gHHAd.jpg" height="80%" width="80%" alt="readable dump"/>
 <br />
 <br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Execute the file again, but with -#XXtttt. Then open Wireshark to look at the packet:  <br/>
+<img src="https://i.imgur.com/6doVJvS.jpg" height="80%" width="80%" alt="wireshark"/>
 <br />
 <br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ <h2>Creating Dump Files with Limits(2/3):</h2>
+<br />
+<br />
+<p align="center">
+Creating packets that when exceeds 1 million bytes, it should create a new file:  <br/>
+<img src="https://i.imgur.com/dmpm8sJ.jpg" height="80%" width="80%" alt="Bytes"/>
+<br />
+<br />
+Using ls -al to show file size:  <br/>
+<img src="https://i.imgur.com/V7k5nMd.jpg" height="80%" width="80%" alt="ls -al"/>
+<br />
+<br />
+ This will create a new file if the packet exceeds 1 million bytes or after 10 minutes:  <br/>
+<img src="https://i.imgur.com/9I1Xiy8.jpg" height="80%" width="80%" alt="Size and Time"/>
+<br />
+<br />
+ <h2>Capture TCP traffic for GET (3/3):</h2>
+<br />
+<br />
+<p align="center">
+Execute, then find a website with a GET operation:  <br/>
+<img src="https://i.imgur.com/3djiEHH.jpg" height="80%" width="80%" alt="GET"/>
+<br />
+<br />
+Execute it into a file:  <br/>
+<img src="https://i.imgur.com/ejXL4OD.jpg" height="80%" width="80%" alt="GET"/>
+<br />
+<br />
+Open Wireshark and find GET:  <br/>
+<img src="https://i.imgur.com/xYuriKH.jpg" height="80%" width="80%" alt="GET"/>
 </p>
+
 
 <!--
  ```diff
